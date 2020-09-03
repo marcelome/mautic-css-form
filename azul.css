@@ -1,0 +1,307 @@
+<style>
+
+/*-- Marcelo Cruz -- */
+/*-- www.marcelocruz.com.br -- */
+/*-- Mautic Form Material Design - Input and Textarea */
+  .mauticform-label {
+        --pure-material-safari-helper1: rgb(var(--pure-material-primary-rgb, 169, 17, 44));
+        position: relative;
+        display: inline-block;
+        padding-top: 6px;
+        font-family:arial, helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        overflow: hidden;
+        width: 100%;
+        
+    }
+
+    .mauticform-label .mauticform-has-error > input{
+        border-color: #fdebc2;
+    }
+
+    /* Input, Textarea */
+    .mauticform-label > input,
+    .mauticform-label > textarea,
+    .mauticform-label > select  {
+        box-sizing: border-box !important;
+        margin: 0!important;
+        border: solid 1px !important; /* Safari */
+        border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6) !important;
+        border-top-color: transparent !important;
+        border-radius: 4px !important;
+        padding: 15px 13px 15px !important;
+        width: 100% !important;
+        height: inherit !important;
+        color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87) !important;
+        background-color: transparent !important;
+        box-shadow: none !important; /* Firefox */
+  
+        font-size: inherit !important;
+        line-height: inherit !important;
+        caret-color: rgb(var(--pure-material-primary-rgb, 169, 17, 44)) !important;
+        transition: border 0.2s, box-shadow 0.2s !important;
+        font-family: arial, helvetica, sans-serif;
+    }
+
+    /* Span */
+    .mauticform-label > input + span,
+    .mauticform-label > textarea + span,
+    .mauticform-label > select + span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+        width: 100%;
+        max-height: 100%;
+        color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+        font-size: 75%;
+        line-height: 15px;
+        cursor: text;
+        transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+    }
+
+    /* Corners */
+    .mauticform-label > input + span::before,
+    .mauticform-label > input + span::after,
+    .mauticform-label > textarea + span::before,
+    .mauticform-label > textarea + span::after,
+    .mauticform-label > select + span::before,
+    .mauticform-label > select + span::after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        margin-top: 6px;
+        border-top: solid 1px;
+        border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6);
+        min-width: 10px;
+        height: 8px;
+        pointer-events: none;
+        box-shadow: inset 0 1px transparent;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .mauticform-label > input + span::before,
+    .mauticform-label > textarea + span::before,
+    .mauticform-label > select + span::before {
+        margin-right: 4px !important;
+        border-left: solid 1px transparent !important;
+        border-radius: 4px 0 !important;
+    }
+
+    .mauticform-label > input + span::after,
+    .mauticform-label > textarea + span::after,
+    .mauticform-label > select + span::after {
+        flex-grow: 1 !important;
+        margin-left: 4px !important;
+        border-right: solid 1px transparent !important;
+        border-radius: 0 4px !important;
+    }
+
+    /* Hover */
+    .mauticform-label:hover > input,
+    .mauticform-label:hover > textarea,
+    .mauticform-label:hover > select {
+        border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87) !important;
+        border-top-color: transparent !important;
+    }
+
+    .mauticform-label:hover > input + span::before,
+    .mauticform-label:hover > textarea + span::before,
+    .mauticform-label:hover > input + span::after,
+    .mauticform-label:hover > textarea + span::after,
+    .mauticform-label:hover > select + span::before,
+    .mauticform-label:hover > select + span::after {
+        border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87) !important;
+    }
+
+    .mauticform-label:hover > input:not(:focus):placeholder-shown,
+    .mauticform-label:hover > textarea:not(:focus):placeholder-shown,
+    .mauticform-label:hover > select:not(:focus):placeholder-shown {
+        border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87) !important;
+    }
+
+    /* Placeholder-shown */
+    .mauticform-label > input:not(:focus):placeholder-shown,
+    .mauticform-label > textarea:not(:focus):placeholder-shown,
+    .mauticform-label > select:not(:focus):placeholder-shown {
+        border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.6) !important;
+    }
+
+    .mauticform-label > input:not(:focus):placeholder-shown + span,
+    .mauticform-label > textarea:not(:focus):placeholder-shown + span, 
+    .mauticform-label > span:not(:focus):placeholder-shown + span {
+        font-size: inherit !important;
+        line-height: 68px !important;
+    }
+
+    .mauticform-label > input:not(:focus):placeholder-shown + span::before,
+    .mauticform-label > textarea:not(:focus):placeholder-shown + span::before,
+    .mauticform-label > input:not(:focus):placeholder-shown + span::after,
+    .mauticform-label > textarea:not(:focus):placeholder-shown + span::after,
+    .mauticform-label > select:not(:focus):placeholder-shown + span::before,
+    .mauticform-label > select:not(:focus):placeholder-shown + span::after {
+        border-top-color: transparent !important;
+    }
+
+    /* Focus */
+    .mauticform-label > input:focus,
+    .mauticform-label > textarea:focus,
+    .mauticform-label > select:focus {
+        border-color: rgb(var(--pure-material-primary-rgb, 169, 17, 44)) !important;
+        border-top-color: transparent !important;
+        box-shadow: inset 1px 0 var(--pure-material-safari-helper1), inset -1px 0 var(--pure-material-safari-helper1), inset 0 -1px var(--pure-material-safari-helper1) !important;
+        outline: none !important;
+    }
+
+    .mauticform-label > input:focus + span,
+    .mauticform-label > textarea:focus + span,
+    .mauticform-label > select:focus + span {
+        color: rgb(var(--pure-material-primary-rgb, 169, 17, 44)) !important;
+    }
+
+    .mauticform-label > input:focus + span::before,
+    .mauticform-label > input:focus + span::after,
+    .mauticform-label > textarea:focus + span::before,
+    .mauticform-label > textarea:focus + span::after,
+    .mauticform-label > select:focus + span::before,
+    .mauticform-label > select:focus + span::after {
+        border-top-color: var(--pure-material-safari-helper1) !important;
+        box-shadow: inset 0 1px var(--pure-material-safari-helper1) !important;
+    }
+
+    /* Disabled */
+    .mauticform-label > input:disabled,
+    .mauticform-label > input:disabled + span,
+    .mauticform-label > textarea:disabled,
+    .mauticform-label > textarea:disabled + span,
+    .mauticform-label > select:disabled,
+    .mauticform-label > select:disabled + span {
+        border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+        border-top-color: transparent !important;
+        color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+        pointer-events: none !important;
+    }
+
+    .mauticform-label > input:disabled + span::before,
+    .mauticform-label > input:disabled + span::after,
+    .mauticform-label > textarea:disabled + span::before,
+    .mauticform-label > textarea:disabled + span::after,
+    .mauticform-label > select:disabled + span::before,
+    .mauticform-label > select:disabled + span::after {
+        border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+    }
+
+    .mauticform-label > input:disabled:placeholder-shown,
+    .mauticform-label > input:disabled:placeholder-shown + span,
+    .mauticform-label > textarea:disabled:placeholder-shown,
+    .mauticform-label > textarea:disabled:placeholder-shown + span,
+    .mauticform-label > select:disabled:placeholder-shown,
+    .mauticform-label > select:disabled:placeholder-shown + span {
+        border-top-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38) !important;
+    }
+
+    .mauticform-label > input:disabled:placeholder-shown + span::before,
+    .mauticform-label > input:disabled:placeholder-shown + span::after,
+    .mauticform-label > textarea:disabled:placeholder-shown + span::before,
+    .mauticform-label > textarea:disabled:placeholder-shown + span::after,
+    .mauticform-label > select:disabled:placeholder-shown + span::before,
+    .mauticform-label > select:disabled:placeholder-shown + span::after {
+        border-top-color: transparent !important;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+    }
+
+    /* Faster transition in Safari for less noticable fractional font-size issue */
+    @media not all and (min-resolution:.001dpcm) {
+        @supports (-webkit-appearance:none) {
+            .mauticform-label > input,
+            .mauticform-label > input + span,
+            .mauticform-label > textarea,
+            .mauticform-label > textarea + span,
+            .mauticform-label > input + span::before,
+            .mauticform-label > input + span::after,
+            .mauticform-label > textarea + span::before,
+            .mauticform-label > textarea + span::after,
+            .mauticform-label > select,
+            .mauticform-label > select + span,
+            .mauticform-label > select + span::before,
+            .mauticform-label > select + span::after {
+                transition-duration: 0.1s !important;
+            }
+        }
+    }
+
+/* -------- >> Mautic Form Material Design - Selectbox */
+  label > select{
+      height: 56px !important;
+
+      background-color: white;
+      border: thin solid blue;
+      border-radius: 4px;
+      display: inline-block;
+      font: inherit;
+      line-height: 1.5em;
+      padding: 0.5em 3.5em 0.5em 1em;
+
+      margin: 0;      
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+  }
+
+  select.round {
+      background-image:
+          linear-gradient(45deg, transparent 50%, #444 50%),
+          linear-gradient(135deg, #444 50%, transparent 50%),
+          radial-gradient(#ccc 70%, transparent 72%);
+      background-position:
+          calc(100% - 24px) calc(1.3em + 3px),
+          calc(100% - 19px) calc(1.3em + 3px),
+          calc(100% - 0.8em) 0.8em;
+      background-size:
+          5px 5px,
+          5px 5px,
+          1.5em 1.5em;
+      background-repeat: no-repeat;
+  }
+
+  /* Radio Group */
+  .mauticform-radiogrp-label {
+      z-index: 0;
+      position: relative;
+      display: inline-block;
+      color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
+      font-family: arial, helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+  }
+
+
+
+/* -------- >> Dafault Mautic CSS with some changes */
+.mauticform_wrapper { max-width: 600px; margin: 10px auto; padding:20px;}
+.mauticform-name { font-weight: bold; font-size: 1.5em; margin-bottom: 3px; }
+.mauticform-description { margin-top: 2px; margin-bottom: 10px; }
+.mauticform-error { margin-bottom: 10px; color: red; }
+.mauticform-message { margin-bottom: 10px;color: green; }
+.mauticform-row { flex: 1; margin-bottom: 18px; }
+.mauticform-helpmessage { display: block; font-size: 0.9em; margin-bottom: 3px; }
+.mauticform-errormsg { color: #806013; background-color: #fdf1d3; border: 1px solid #fdebc2; border-radius: 4px; padding: 5px 15px; margin-top: 10px; }
+.mauticform-selectbox, .mauticform-input, .mauticform-textarea { width: 100%; padding: 0.5em 0.5em; border: 1px solid #CCC; background: #fff; box-shadow: 0px 0px 0px #fff inset; border-radius: 4px; box-sizing: border-box; }
+.mauticform-checkboxgrp-label { font-weight: normal; }
+.mauticform-button-wrapper .mauticform-button.btn-default, .mauticform-pagebreak-wrapper .mauticform-pagebreak.btn-default { color: #fff;background-color: #000000;border-color: #0000FF;float: right;padding: 15px 35px; width: 100%;}
+.mauticform-button-wrapper .mauticform-button, .mauticform-pagebreak-wrapper .mauticform-pagebreak { display: inline-block;margin-bottom: 0;font-weight: 600;text-align: center;vertical-align: middle;cursor: pointer;background-image: none;border: 1px solid transparent;white-space: nowrap;padding: 6px 12px;font-size: 13px;line-height: 1.3856;border-radius: 3px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;font-family:arial, helvetica, sans-serif; !important;}
+.mauticform-pagebreak-wrapper .mauticform-button-wrapper {  display: inline; }
+.mauticform-button.btn.btn-default:hover{background-color:#0000FF ;color: #FFF;}
+.mauticform-page-wrapper {color: #ffffff; background-color: #0d58a3;}
+.mauticform-innerform {padding:20px;margin: 10px; color: #ffffff; background-color: #0d58a3;}
+.mauticform-freetext{ line-height:1.4; font-family:arial, helvetica, sans-serif; margin:0;}
+h3{font-size:22px!important;}
